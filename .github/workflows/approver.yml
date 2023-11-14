@@ -1,0 +1,23 @@
+name: Print Hello World
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  this_is_dev:
+    runs-on: ubuntu-latest
+    environment : dev
+    steps:
+
+    - name: Print Hello World from dev
+      run: echo "Hello World DEV"
+
+  this_is_staging:
+    runs-on: ubuntu-latest
+    environment : staging
+    steps:
+
+    - name: Print Hello World from staging
+      run: echo "Hello World STAGING"
