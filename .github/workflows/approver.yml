@@ -15,6 +15,7 @@ jobs:
       run: echo "Hello World DEV"
 
   this_is_staging:
+    needs: this_is_dev
     runs-on: ubuntu-latest
     environment : staging
     steps:
