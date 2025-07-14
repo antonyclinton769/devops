@@ -41,5 +41,5 @@ jobs:
             - name: Deploy Bicep template
               uses: azure/powershell@v2
               with:
-                inlineScript: ./terraform-backend/deploy.ps1 
+                inlineScript: ./terraform-backend/deploy.ps1 -env "dev"
                 azPSVersion: "latest"
