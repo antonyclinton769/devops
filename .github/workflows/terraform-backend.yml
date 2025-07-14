@@ -1,6 +1,18 @@
 name : Terraform Backend Deployment
 
 on:
+    workflow_dispatch:
+        inputs:
+            environment:
+                description: 'Deployment Environments (dev, qa, uat, prod)'
+                required: true
+                default: 'dev'
+                type: choice
+                options:
+                    - dev
+                    - qa
+                    - uat
+                    - prod
     push:
         paths:
             - 'terraform-backend/**'
