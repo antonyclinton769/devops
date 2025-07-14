@@ -1,0 +1,27 @@
+name : Terraform Backend Deployment
+
+on:
+    push:
+        paths:
+            - 'terraform-backend/**'
+    pull_request:
+        paths:
+            - 'terraform-backend/**'
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            # - name: Set up Azure CLI
+            #   uses: azure/setup-azure-cli@v1
+
+            # - name: Login to Azure
+            #   run: az login --service-principal -u ${{ secrets.AZURE_CLIENT_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+
+            # - name: Deploy Bicep template
+            #   uses: azure/powershell@v2
+            #   with:
+            #     inlineScript: ./scripts/run_azps_cmdlets.ps1
+            #     azPSVersion: "latest"
